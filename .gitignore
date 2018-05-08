@@ -1,0 +1,23 @@
+# continuous integration script
+/c12e-ci/
+
+# Nix automation
+build-nix/
+result
+result-*
+
+# Haskell Stack
+.stack-work/
+
+# Haskell Cabal (sandbox)
+.cabal-sandbox/
+cabal.sandbox.config
+dist/
+
+# Haskell Cabal (newtyle)
+cabal.project.local
+dist-newstyle/
+
+# Python
+*.pyc
+*.egg-info/
