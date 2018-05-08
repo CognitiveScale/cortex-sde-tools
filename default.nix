@@ -1,14 +1,15 @@
 let
 
     pkgs-make = (import ./pkgs-make) {};
-
     pkgs = pkgs-make (import ./pkgs);
 
 in
 
 {
-    core = with pkgs; {
-        inherit cortex-sde-manage;
+    cortex-sde.tools-installer = pkgs.cortex-sde-tools-installer;
+    cortex-sde.tools = with pkgs; {
+        inherit
+            cortex-sde-manage;
     };
     editors = with pkgs.nixpkgs; {
         inherit atom emacs;

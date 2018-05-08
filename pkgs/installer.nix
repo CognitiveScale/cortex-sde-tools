@@ -11,6 +11,9 @@ in
 
 writeShellScriptBin "cortex-sde-tools-install" ''
     ${coreutils}/bin/mkdir -p ~/.nix-defexpr
-    ${git}/bin/git ${repo} ~/.nix-defexpr/cortex-sde
-    nix-env --install --attr cortex-sde.core
+    if [ -e ~/.nix-defexpr/cortex-sde ]
+    then ${git}/bin/git clone ${repo} ~/.nix-defexpr/cortex-sde
+    else ${git}/bin/git clone ${repo} ~/.nix-defexpr/cortex-sde
+    fi
+    nix-env --install --attr cortex-sde.tools
 ''
