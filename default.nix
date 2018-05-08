@@ -6,9 +6,9 @@ let
 in
 
 {
-    cortex-sde.tools-installer = pkgs.cortex-sde-tools-installer;
-    cortex-sde.tools = with pkgs; {
+    cortex-sde = with pkgs; {
         inherit
+            cortex-sde-upgrade
             cortex-sde-manage;
     };
     editors = with pkgs.nixpkgs; {

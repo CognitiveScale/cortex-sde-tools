@@ -2,6 +2,6 @@ inputs@{call, ...}:
 
 let
     pythonPkgs = import ./python inputs;
-    cortex-sde-tools-installer = call.package ./installer.nix;
+    cortex-sde-upgrade = call.package ./upgrade.nix;
 in
-    pythonPkgs // { inherit cortex-sde-tools-installer; }
+    pythonPkgs // { inherit cortex-sde-upgrade; }
