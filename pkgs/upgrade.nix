@@ -13,11 +13,12 @@ writeShellScriptBin "cortex-sde-upgrade" ''
     set -u
     set -e
     ${coreutils}/bin/mkdir -p ~/.nix-defexpr
-    if [ -e ~/.nix-defexpr/cortex-sde ]
-    then ${git}/bin/git clone ${repo} ~/.nix-defexpr/cortex-sde
+    if [ -e ~/.nix-defexpr/cortex ]
+    then
+        ${git}/bin/git -C ~/.nix-defexpr/cortex checkout master
+        ${git}/bin/git -C ~/.nix-defexpr/cortex pull
     else
-        ${git}/bin/git -C ~/.nix-defexpr/cortex-sde checkout master
-        ${git}/bin/git -C ~/.nix-defexpr/cortex-sde pull
+        ${git}/bin/git clone ${repo} ~/.nix-defexpr/cortex
     fi
-    nix-env --install --attr cortex-sde.tools
+    nix-env --install --attr cortex.sde
 ''

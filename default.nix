@@ -6,7 +6,7 @@ let
 in
 
 {
-    cortex-sde = with pkgs; {
+    sde = with pkgs; {
         inherit
             cortex-sde-upgrade
             cortex-sde-manage;
@@ -19,7 +19,6 @@ in
         vscode = vscode-with-extensions;
     };
     python = {
-        conda = pkgs.nixpkgs.conda;
-        #conda = pkgs.nixpkgs.python36Packages.conda;
+        conda = pkgs.nixpkgs.python36Packages.conda;
     };
 }
