@@ -41,6 +41,7 @@ then
         mocket = (import ./mocket) pkgs self super;
         pathlib = (import ./pathlib) pkgs self super;
         psycopg2 = (import ./psycopg2) pkgs self super;
+        pyjq = (import ./pyjq) pkgs self super;
         smart_open = (import ./smart_open) pkgs self super;
     }
 else

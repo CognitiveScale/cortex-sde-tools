@@ -1,6 +1,6 @@
 let
 
-    pkgs-make = (import ./pkgs-make) {};
+    pkgs-make = (import ../pkgs-make) {};
 
     pkgs = pkgs-make (import ./.);
 
@@ -64,6 +64,7 @@ let
             msgpack-numpy
             pathlib
             psycopg2
+            pyjq
             regex
             smart_open; };
 
